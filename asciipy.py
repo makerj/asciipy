@@ -27,7 +27,7 @@ def start(input_path, output_path=None, thumbnail_resolution=(320, 320), callbac
     # else:
     #     ascii_converted = convert_most10only(dim, width, height)
     ascii_converted = convert(dim, width, height, multiply)
-    ascii_converted += '\nPowered by pyscii'
+    ascii_converted += '\nPowered by asciipy'
 
     # Save Image if need
     if output_path:
