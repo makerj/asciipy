@@ -3,17 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <title>asciipy</title>
+    <style>
+        * {
+            margin: 0 auto;
+            box-sizing: border-box;
+            color: white;
+            text-shadow: 0 0 4px black;
+        }
+
+        h1 {
+        }
+
+        body {
+            /*background: linear-gradient(#FF9198, #7BE783);*/
+            background: linear-gradient(#7BE783, #FDFE88);
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrap {
+            width: 480px;
+            height: 480px;
+            padding: 20px;
+            border: 7px solid rgba(255, 255, 255, 0.8);
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .btn {
+            width: 75%;
+            height: 50px;
+            /*background: rgba(255, 255, 255, 0);*/
+            background: rgba(123, 231, 131, 0.8);
+            border: 7px solid rgba(123, 231, 131, 0.8);
+            text-shadow: 0 0 0 black;
+            font-weight: bolder;
+            font-size: 15px;
+            margin-top: 25px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .divider {
+            width: 90%;
+            height: 1px;
+            background-color: white;
+            box-shadow: 0 0 3px white;
+
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-<h1>Online Image Ascii Artfier</h1>
-<h5>Author</h5>
-<p>makerj(ohenwkgdj@gmail.com)</p>
-<p>makersm(sayyo1120@gmail.com)</p>
-<hr>
-<form method="post" action="/upload" enctype="multipart/form-data">
-    <label for="file">Choose an image</label><br>
-    <input type="file" name="file" id="file">
-    <button type="submit">CONVERT THIS!</button>
-</form>
+<div class="wrap">
+    <h1 style="font-size: 80px">asciipy</h1>
+    <h1 style="font-size: 25px">Online Image Ascii Artfier</h1>
+    <div class="divider"></div>
+    <form method="post" action="/upload" enctype="multipart/form-data" id="form">
+        <input type="file" name="file" id="file" class="hidden" onchange="document.querySelector('#form').submit()">
+        <button type="button" class="btn" onclick="document.querySelector('#file').click()">UPLOAD IMAGE</button>
+    </form>
+    <div style="margin-top: 125px">
+        <h5>Author</h5>
+        <p>makerj(ohenwkgdj@gmail.com)</p>
+        <p>makersm(sayyo1120@gmail.com)</p>
+    </div>
+</div>
 </body>
 </html>
